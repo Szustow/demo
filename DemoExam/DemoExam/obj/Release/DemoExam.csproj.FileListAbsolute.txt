@@ -1,0 +1,17 @@
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\Database2.mdf
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\Database2_log.ldf
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\DemoExam.exe.config
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\DemoExam.exe
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\DemoExam.pdb
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\EntityFramework.dll
+C:\Users\schoc\source\repos\DemoExam\DemoExam\bin\Release\EntityFramework.xml
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.csproj.AssemblyReference.cache
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.Form1.resources
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.Form2.resources
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.Properties.Resources.resources
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.csproj.GenerateResource.cache
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.csproj.CoreCompileInputs.cache
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.csproj.Up2Date
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.exe
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.pdb
+C:\Users\schoc\source\repos\DemoExam\DemoExam\obj\Release\DemoExam.Form3.resources

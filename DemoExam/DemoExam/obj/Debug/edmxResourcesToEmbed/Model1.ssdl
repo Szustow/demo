@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Database2Model" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Partners">
+    <Key>
+      <PropertyRef Name="Title" />
+    </Key>
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="Postcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Region" Type="nvarchar" MaxLength="100" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="Street" Type="nvarchar" MaxLength="100" />
+    <Property Name="Number" Type="nvarchar" MaxLength="100" />
+    <Property Name="TIN" Type="nvarchar" MaxLength="100" />
+    <Property Name="Rating" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductPartner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="PartnerTitle" Type="nvarchar" MaxLength="100" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Title" />
+    </Key>
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Article" Type="nvarchar" MaxLength="100" />
+    <Property Name="MinCost" Type="float" />
+  </EntityType>
+  <EntityType Name="ProductsTypes">
+    <Key>
+      <PropertyRef Name="Title" />
+    </Key>
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Rate" Type="float" />
+  </EntityType>
+  <Association Name="FK__ProductPa__Partn__440B1D61">
+    <End Role="Partners" Type="Self.Partners" Multiplicity="0..1" />
+    <End Role="ProductPartner" Type="Self.ProductPartner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partners">
+        <PropertyRef Name="Title" />
+      </Principal>
+      <Dependent Role="ProductPartner">
+        <PropertyRef Name="PartnerTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductPa__Produ__4316F928">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="ProductPartner" Type="Self.ProductPartner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Title" />
+      </Principal>
+      <Dependent Role="ProductPartner">
+        <PropertyRef Name="ProductTitle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Type__3C69FB99">
+    <End Role="ProductsTypes" Type="Self.ProductsTypes" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductsTypes">
+        <PropertyRef Name="Title" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Database2ModelContainer">
+    <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductPartner" EntityType="Self.ProductPartner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductsTypes" EntityType="Self.ProductsTypes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ProductPa__Partn__440B1D61" Association="Self.FK__ProductPa__Partn__440B1D61">
+      <End Role="Partners" EntitySet="Partners" />
+      <End Role="ProductPartner" EntitySet="ProductPartner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductPa__Produ__4316F928" Association="Self.FK__ProductPa__Produ__4316F928">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductPartner" EntitySet="ProductPartner" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Type__3C69FB99" Association="Self.FK__Products__Type__3C69FB99">
+      <End Role="ProductsTypes" EntitySet="ProductsTypes" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
